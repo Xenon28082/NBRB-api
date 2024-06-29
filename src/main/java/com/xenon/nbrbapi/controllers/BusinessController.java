@@ -34,7 +34,7 @@ public class BusinessController {
         try {
             return new ResponseEntity(operator.findRates(date, code.toUpperCase()), HttpStatus.OK);
         }catch (NoDataFoundException exception){
-            return new ResponseEntity(exception.getMessage(), HttpStatus.OK);
+            return new ResponseEntity(exception.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 }
